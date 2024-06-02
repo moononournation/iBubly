@@ -1,7 +1,7 @@
 #pragma once
 
 #include <JPEGDEC.h>
-JPEGDEC jpeg;
+JPEGDEC jpegdec;
 uint8_t *buf;
 size_t buf_allocated_size = 0;
 
@@ -40,7 +40,7 @@ void showJpeg(HTTPClient *http, size_t len)
     }
     else
     {
-      int jpeg_result = jpeg.openRAM(buf, len, jpegDrawCallback);
+      int jpeg_result = jpegdec.openRAM(buf, len, jpegDrawCallback);
 
       if (!jpeg_result)
       {
@@ -58,42 +58,42 @@ void showJpeg(HTTPClient *http, size_t len)
         // scale to fit height
         int scale;
         int iMaxMCUs;
-        float ratio = (float)jpeg.getHeight() / h;
+        float ratio = (float)jpegdec.getHeight() / h;
         if (ratio <= 1)
         {
           scale = 0;
           iMaxMCUs = w / 16;
-          // x = (w - jpeg.getWidth()) / 2;
-          y = (h - jpeg.getHeight()) / 2;
+          // x = (w - jpegdec.getWidth()) / 2;
+          y = (h - jpegdec.getHeight()) / 2;
         }
         else if (ratio <= 2)
         {
           scale = JPEG_SCALE_HALF;
           iMaxMCUs = w / 8;
-          // x = (w - (jpeg.getWidth() / 2)) / 2;
-          y = (h - (jpeg.getHeight() / 2)) / 2;
+          // x = (w - (jpegdec.getWidth() / 2)) / 2;
+          y = (h - (jpegdec.getHeight() / 2)) / 2;
         }
         else if (ratio <= 4)
         {
           scale = JPEG_SCALE_QUARTER;
           iMaxMCUs = w / 4;
-          // x = (w - (jpeg.getWidth() / 4)) / 2;
-          y = (h - (jpeg.getHeight() / 4)) / 2;
+          // x = (w - (jpegdec.getWidth() / 4)) / 2;
+          y = (h - (jpegdec.getHeight() / 4)) / 2;
         }
         else
         {
           scale = JPEG_SCALE_EIGHTH;
           iMaxMCUs = w / 2;
-          // x = (w - (jpeg.getWidth() / 8)) / 2;
-          y = (h - (jpeg.getHeight() / 8)) / 2;
+          // x = (w - (jpegdec.getWidth() / 8)) / 2;
+          y = (h - (jpegdec.getHeight() / 8)) / 2;
         }
-        jpeg.setMaxOutputSize(iMaxMCUs);
-        jpeg.setPixelType(RGB565_BIG_ENDIAN);
-        if (!jpeg.decode(x, y, scale))
+        jpegdec.setMaxOutputSize(iMaxMCUs);
+        jpegdec.setPixelType(RGB565_BIG_ENDIAN);
+        if (!jpegdec.decode(x, y, scale))
         {
           Serial.print(F("JPEG decode failed!"));
         }
-        jpeg.close();
+        jpegdec.close();
       }
     }
   }
