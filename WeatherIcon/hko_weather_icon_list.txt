@@ -1,10 +1,3 @@
-# HKO Weather Example
-
- * https://www.hko.gov.hk/textonly/v2/explain/wxicon_e.htm
- * https://data.weather.gov.hk/weatherAPI/doc/HKO_Open_Data_API_Documentation.pdf
- * https://rss.weather.gov.hk/rsse.html
-
-
 https://www.hko.gov.hk/en/wxinfo/dailywx/images/vhot.gif
 https://www.hko.gov.hk/en/wxinfo/dailywx/images/raina.gif
 https://www.hko.gov.hk/en/wxinfo/dailywx/images/rainr.gif
@@ -26,9 +19,32 @@ https://www.hko.gov.hk/en/wxinfo/dailywx/images/frost.gif
 https://www.hko.gov.hk/en/wxinfo/dailywx/images/firer.gif
 https://www.hko.gov.hk/en/wxinfo/dailywx/images/firey.gif
 https://www.hko.gov.hk/en/wxinfo/dailywx/images/tsunami-warn.gif
-
-https://rss.weather.gov.hk/img/tc1.gif
+https://rss.weather.gov.hk/img/pic50.png
+https://rss.weather.gov.hk/img/pic51.png
+https://rss.weather.gov.hk/img/pic52.png
+https://rss.weather.gov.hk/img/pic53.png
+https://rss.weather.gov.hk/img/pic54.png
+https://rss.weather.gov.hk/img/pic60.png
+https://rss.weather.gov.hk/img/pic61.png
+https://rss.weather.gov.hk/img/pic62.png
+https://rss.weather.gov.hk/img/pic63.png
 https://rss.weather.gov.hk/img/pic64.png
-
-https://www.hko.gov.hk/images/HKOWarningSymbols_m/warn800_09_rain%20amber.png
-https://www.hko.gov.hk/images/HKOWarningSymbols_l/warn800_09_rain%20amber.png
+https://rss.weather.gov.hk/img/pic65.png
+https://rss.weather.gov.hk/img/pic70.png
+https://rss.weather.gov.hk/img/pic71.png
+https://rss.weather.gov.hk/img/pic72.png
+https://rss.weather.gov.hk/img/pic73.png
+https://rss.weather.gov.hk/img/pic74.png
+https://rss.weather.gov.hk/img/pic75.png
+https://rss.weather.gov.hk/img/pic76.png
+https://rss.weather.gov.hk/img/pic77.png
+https://rss.weather.gov.hk/img/pic80.png
+https://rss.weather.gov.hk/img/pic81.png
+https://rss.weather.gov.hk/img/pic82.png
+https://rss.weather.gov.hk/img/pic83.png
+https://rss.weather.gov.hk/img/pic84.png
+https://rss.weather.gov.hk/img/pic85.png
+https://rss.weather.gov.hk/img/pic90.png
+https://rss.weather.gov.hk/img/pic91.png
+https://rss.weather.gov.hk/img/pic92.png
+https://rss.weather.gov.hk/img/pic93.png
