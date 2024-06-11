@@ -43,7 +43,7 @@ void getWeather(HTTPClient *http, size_t len)
 
   sprintf(textBuf, "%d℃  %d%%", temperature, humidity);
   lv_label_set_text(ui_Label1, textBuf);
-  sprintf(textBuf, " 雨: %d UV: %.1f", rainfall, uvindex);
+  sprintf(textBuf, "雨: %d UV: %.1f", rainfall, uvindex);
   lv_label_set_text(ui_Label2, textBuf);
 
   switch (icon)

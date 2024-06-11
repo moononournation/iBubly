@@ -47,17 +47,17 @@
                 "strtype": "OBJECT/Position",
                 "intarray": [
                   0,
-                  2
+                  0
                 ],
                 "InheritedType": 7
               },
               {
                 "nid": 11426759,
-                "flags": 51,
+                "flags": 17,
                 "strtype": "OBJECT/Size",
                 "intarray": [
-                  1,
-                  1
+                  280,
+                  52
                 ],
                 "InheritedType": 7
               },
@@ -273,9 +273,51 @@
                     "strval": "DEFAULT",
                     "childs": [
                       {
+                        "nid": -2139979016,
+                        "strtype": "_style/Text_Align",
+                        "strval": "CENTER",
+                        "InheritedType": 3
+                      },
+                      {
                         "nid": -1419326421,
                         "strtype": "_style/Text_Font",
                         "strval": "Font2",
+                        "InheritedType": 3
+                      },
+                      {
+                        "nid": -472591250,
+                        "strtype": "_style/Bg_Color",
+                        "intarray": [
+                          0,
+                          0,
+                          0,
+                          255
+                        ],
+                        "InheritedType": 7
+                      },
+                      {
+                        "nid": 1450647387,
+                        "strtype": "_style/Bg_gradiens_Color",
+                        "intarray": [
+                          0,
+                          0,
+                          96
+                        ],
+                        "InheritedType": 7
+                      },
+                      {
+                        "nid": 1875308899,
+                        "strtype": "_style/Bg_gradient_params",
+                        "intarray": [
+                          0,
+                          255
+                        ],
+                        "InheritedType": 7
+                      },
+                      {
+                        "nid": -602285231,
+                        "strtype": "_style/Gradient direction",
+                        "strval": "VER",
                         "InheritedType": 3
                       }
                     ],
@@ -336,24 +378,24 @@
                 "strtype": "OBJECT/Position",
                 "intarray": [
                   0,
-                  24
+                  68
                 ],
                 "InheritedType": 7
               },
               {
                 "nid": 791281211,
-                "flags": 17,
+                "flags": 19,
                 "strtype": "OBJECT/Size",
                 "intarray": [
-                  280,
-                  28
+                  1,
+                  22
                 ],
                 "InheritedType": 7
               },
               {
                 "nid": -1413629255,
                 "strtype": "OBJECT/Align",
-                "strval": "TOP_LEFT",
+                "strval": "TOP_RIGHT",
                 "InheritedType": 3
               },
               {
@@ -550,7 +592,7 @@
               {
                 "nid": 1447537649,
                 "strtype": "LABEL/Text",
-                "strval": " 雨: 0  UV: 0.1",
+                "strval": "雨: 0  UV: 0.1",
                 "InheritedType": 10
               },
               {
@@ -562,19 +604,36 @@
                     "strval": "DEFAULT",
                     "childs": [
                       {
+                        "nid": 691166462,
+                        "strtype": "_style/Text_Align",
+                        "strval": "RIGHT",
+                        "InheritedType": 3
+                      },
+                      {
                         "nid": 482249223,
                         "strtype": "_style/Text_Font",
                         "strval": "Font2",
                         "InheritedType": 3
                       },
                       {
-                        "nid": -2070268164,
+                        "nid": -1076097486,
                         "strtype": "_style/Bg_Color",
                         "intarray": [
-                          0,
-                          0,
-                          102,
-                          255
+                          119,
+                          119,
+                          119,
+                          127
+                        ],
+                        "InheritedType": 7
+                      },
+                      {
+                        "nid": -1571532948,
+                        "strtype": "_style/Padding",
+                        "intarray": [
+                          2,
+                          2,
+                          2,
+                          2
                         ],
                         "InheritedType": 7
                       }
@@ -637,17 +696,17 @@
                 "strtype": "OBJECT/Position",
                 "intarray": [
                   0,
-                  30
+                  26
                 ],
                 "InheritedType": 7
               },
               {
                 "nid": 557905712,
-                "flags": 17,
+                "flags": 19,
                 "strtype": "OBJECT/Size",
                 "intarray": [
-                  160,
-                  34
+                  1,
+                  38
                 ],
                 "InheritedType": 7
               },
@@ -880,8 +939,8 @@
                         "intarray": [
                           0,
                           0,
-                          102,
-                          128
+                          96,
+                          127
                         ],
                         "InheritedType": 7
                       },
@@ -909,6 +968,17 @@
                         "strtype": "_style/Gradient direction",
                         "strval": "VER",
                         "InheritedType": 3
+                      },
+                      {
+                        "nid": -1732739142,
+                        "strtype": "_style/Padding",
+                        "intarray": [
+                          2,
+                          2,
+                          2,
+                          2
+                        ],
+                        "InheritedType": 7
                       }
                     ],
                     "InheritedType": 1
@@ -968,8 +1038,8 @@
                 "flags": 17,
                 "strtype": "OBJECT/Position",
                 "intarray": [
-                  4,
-                  44
+                  6,
+                  30
                 ],
                 "InheritedType": 7
               },
@@ -1250,8 +1320,8 @@
                 "flags": 17,
                 "strtype": "OBJECT/Position",
                 "intarray": [
-                  58,
-                  44
+                  60,
+                  30
                 ],
                 "InheritedType": 7
               },
@@ -1532,8 +1602,8 @@
                 "flags": 17,
                 "strtype": "OBJECT/Position",
                 "intarray": [
-                  4,
-                  98
+                  6,
+                  84
                 ],
                 "InheritedType": 7
               },
@@ -1814,8 +1884,8 @@
                 "flags": 17,
                 "strtype": "OBJECT/Position",
                 "intarray": [
-                  58,
-                  98
+                  60,
+                  84
                 ],
                 "InheritedType": 7
               },
@@ -2096,8 +2166,8 @@
                 "flags": 17,
                 "strtype": "OBJECT/Position",
                 "intarray": [
-                  58,
-                  152
+                  60,
+                  138
                 ],
                 "InheritedType": 7
               },
@@ -2379,8 +2449,8 @@
                 "flags": 17,
                 "strtype": "OBJECT/Position",
                 "intarray": [
-                  4,
-                  152
+                  6,
+                  138
                 ],
                 "InheritedType": 7
               },
