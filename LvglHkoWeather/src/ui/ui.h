@@ -36,39 +36,56 @@ extern lv_obj_t *ui_Icon6;
 extern lv_obj_t *ui____initial_actions0;
 
 
-LV_IMG_DECLARE( ui_img_pic50_png);   // assets/pic50.png
-LV_IMG_DECLARE( ui_img_pic51_png);   // assets/pic51.png
-LV_IMG_DECLARE( ui_img_pic52_png);   // assets/pic52.png
-LV_IMG_DECLARE( ui_img_pic53_png);   // assets/pic53.png
-LV_IMG_DECLARE( ui_img_pic54_png);   // assets/pic54.png
-LV_IMG_DECLARE( ui_img_pic60_png);   // assets/pic60.png
-LV_IMG_DECLARE( ui_img_pic61_png);   // assets/pic61.png
-LV_IMG_DECLARE( ui_img_pic62_png);   // assets/pic62.png
-LV_IMG_DECLARE( ui_img_pic63_png);   // assets/pic63.png
-LV_IMG_DECLARE( ui_img_pic64_png);   // assets/pic64.png
-LV_IMG_DECLARE( ui_img_pic65_png);   // assets/pic65.png
-LV_IMG_DECLARE( ui_img_pic70_png);   // assets/pic70.png
-LV_IMG_DECLARE( ui_img_pic71_png);   // assets/pic71.png
-LV_IMG_DECLARE( ui_img_pic72_png);   // assets/pic72.png
-LV_IMG_DECLARE( ui_img_pic73_png);   // assets/pic73.png
-LV_IMG_DECLARE( ui_img_pic74_png);   // assets/pic74.png
-LV_IMG_DECLARE( ui_img_pic75_png);   // assets/pic75.png
-LV_IMG_DECLARE( ui_img_pic76_png);   // assets/pic76.png
-LV_IMG_DECLARE( ui_img_pic77_png);   // assets/pic77.png
-LV_IMG_DECLARE( ui_img_pic80_png);   // assets/pic80.png
-LV_IMG_DECLARE( ui_img_pic81_png);   // assets/pic81.png
-LV_IMG_DECLARE( ui_img_pic82_png);   // assets/pic82.png
-LV_IMG_DECLARE( ui_img_pic83_png);   // assets/pic83.png
-LV_IMG_DECLARE( ui_img_pic84_png);   // assets/pic84.png
-LV_IMG_DECLARE( ui_img_pic85_png);   // assets/pic85.png
-LV_IMG_DECLARE( ui_img_pic90_png);   // assets/pic90.png
-LV_IMG_DECLARE( ui_img_pic91_png);   // assets/pic91.png
-LV_IMG_DECLARE( ui_img_pic92_png);   // assets/pic92.png
-LV_IMG_DECLARE( ui_img_pic93_png);   // assets/pic93.png
-LV_IMG_DECLARE( ui_img_tc1_png);   // assets/tc1.png
-LV_IMG_DECLARE( ui_img_tc10_png);   // assets/tc10.png
-LV_IMG_DECLARE( ui_img_tc3_png);   // assets/tc3.png
-LV_IMG_DECLARE( ui_img_tc9_png);   // assets/tc9.png
+LV_IMG_DECLARE( ui_img_cold_png);
+LV_IMG_DECLARE( ui_img_firer_png);
+LV_IMG_DECLARE( ui_img_firey_png);
+LV_IMG_DECLARE( ui_img_frost_png);
+LV_IMG_DECLARE( ui_img_landslip_png);
+LV_IMG_DECLARE( ui_img_ntfl_png);
+LV_IMG_DECLARE( ui_img_pic50_png);
+LV_IMG_DECLARE( ui_img_pic51_png);
+LV_IMG_DECLARE( ui_img_pic52_png);
+LV_IMG_DECLARE( ui_img_pic53_png);
+LV_IMG_DECLARE( ui_img_pic54_png);
+LV_IMG_DECLARE( ui_img_pic60_png);
+LV_IMG_DECLARE( ui_img_pic61_png);
+LV_IMG_DECLARE( ui_img_pic62_png);
+LV_IMG_DECLARE( ui_img_pic63_png);
+LV_IMG_DECLARE( ui_img_pic64_png);
+LV_IMG_DECLARE( ui_img_pic65_png);
+LV_IMG_DECLARE( ui_img_pic70_png);
+LV_IMG_DECLARE( ui_img_pic71_png);
+LV_IMG_DECLARE( ui_img_pic72_png);
+LV_IMG_DECLARE( ui_img_pic73_png);
+LV_IMG_DECLARE( ui_img_pic74_png);
+LV_IMG_DECLARE( ui_img_pic75_png);
+LV_IMG_DECLARE( ui_img_pic76_png);
+LV_IMG_DECLARE( ui_img_pic77_png);
+LV_IMG_DECLARE( ui_img_pic80_png);
+LV_IMG_DECLARE( ui_img_pic81_png);
+LV_IMG_DECLARE( ui_img_pic82_png);
+LV_IMG_DECLARE( ui_img_pic83_png);
+LV_IMG_DECLARE( ui_img_pic84_png);
+LV_IMG_DECLARE( ui_img_pic85_png);
+LV_IMG_DECLARE( ui_img_pic90_png);
+LV_IMG_DECLARE( ui_img_pic91_png);
+LV_IMG_DECLARE( ui_img_pic92_png);
+LV_IMG_DECLARE( ui_img_pic93_png);
+LV_IMG_DECLARE( ui_img_raina_png);
+LV_IMG_DECLARE( ui_img_rainb_png);
+LV_IMG_DECLARE( ui_img_rainr_png);
+LV_IMG_DECLARE( ui_img_sms_png);
+LV_IMG_DECLARE( ui_img_tc10_png);
+LV_IMG_DECLARE( ui_img_tc1_png);
+LV_IMG_DECLARE( ui_img_tc3_png);
+LV_IMG_DECLARE( ui_img_tc8b_png);
+LV_IMG_DECLARE( ui_img_tc8c_png);
+LV_IMG_DECLARE( ui_img_tc8d_png);
+LV_IMG_DECLARE( ui_img_tc8ne_png);
+LV_IMG_DECLARE( ui_img_tc9_png);
+LV_IMG_DECLARE( ui_img_ts_png);
+LV_IMG_DECLARE( ui_img_tsunami_png);
+LV_IMG_DECLARE( ui_img_vhot_png);
 
 
 LV_FONT_DECLARE( ui_font_Font1);

@@ -1,5 +1,10 @@
 #pragma once
 
+const char *ntpServer1 = "pool.ntp.org";
+const char *ntpServer2 = "time.nist.gov";
+const long gmtOffset_sec = (8 * 60 * 60);
+const int daylightOffset_sec = 0;
+
 void setClock()
 {
   configTime(gmtOffset_sec, daylightOffset_sec, ntpServer1, ntpServer2);

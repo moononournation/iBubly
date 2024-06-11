@@ -13,20 +13,6 @@
 const char *SSID_NAME = "YourAP";
 const char *SSID_PASSWORD = "PleaseInputYourPasswordHere";
 
-const char *ntpServer1 = "pool.ntp.org";
-const char *ntpServer2 = "time.nist.gov";
-const long gmtOffset_sec = (8 * 60 * 60);
-const int daylightOffset_sec = 0;
-
-const char *WEATHER_PHOTO_URL_TEMPLATE[] = {
-"https://www.hko.gov.hk/wxinfo/aws/hko_mica/cp1/latest_CP1.jpg?v=%lu123", // Central Pier
-"https://www.hko.gov.hk/wxinfo/aws/hko_mica/hmm/latest_HMM.jpg?v=%lu123", // Hong Kong Maritime Museum
-"https://www.hko.gov.hk/wxinfo/aws/hko_mica/ic1/latest_IC1.jpg?v=%lu123" // International Commerce Centre
-};
-
-const char *CURRENT_WEATHER_URL = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en";
-const char *WEATHER_WARNSUM_URL = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=en";
-
 #include <lvgl.h>
 // #define DIRECT_MODE // Uncomment to enable full frame buffer
 #include "src/ui/ui.h"
@@ -47,7 +33,6 @@ Arduino_GFX *gfx = new Arduino_ST7789(bus, 12 /* RST */, 1 /* rotation */, true 
  ******************************************************************************/
 #include "touch.h"
 
-#include <driver/ledc.h>
 #include <esp_task_wdt.h>
 #include <WiFi.h>
 
@@ -71,8 +56,8 @@ char textBuf[1024];
 #include "getWeather.h"
 #include "setClock.h"
 
-
 #ifdef GFX_BL
+#include <driver/ledc.h>
 ledc_channel_config_t ledc_channel = {
     .gpio_num = GFX_BL,
     .speed_mode = LEDC_LOW_SPEED_MODE,
@@ -254,7 +239,7 @@ void setup()
     lv_obj_set_x(tabview, 0);
     lv_obj_set_y(tabview, 42);
     lv_obj_move_background(tabview);
-    lv_obj_set_style_text_font(tabview, &ui_font_Font2, LV_PART_MAIN| LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(tabview, &ui_font_Font2, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_t *tab1 = lv_tabview_add_tab(tabview, "中環碼頭");
     lv_obj_clear_flag(tab1, LV_OBJ_FLAG_SCROLLABLE); /// Flags
@@ -321,7 +306,10 @@ void loop()
       {
         if (httpsRequest((char *)CURRENT_WEATHER_URL, &getWeather))
         {
-          next_photo_load_millis[cur_tab_idx] = (((millis() / 60000L) + 5) * 60000L); // next 5 minutes
+          if (httpsRequest((char *)WEATHER_WARNSUM_URL, &getWarning))
+          {
+            next_photo_load_millis[cur_tab_idx] = (((millis() / 60000L) + 5) * 60000L); // next 5 minutes
+          }
         }
       }
     }

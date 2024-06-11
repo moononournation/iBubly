@@ -2,6 +2,15 @@
 
 #include <Arduino_JSON.h>
 
+const char *WEATHER_PHOTO_URL_TEMPLATE[] = {
+    "https://www.hko.gov.hk/wxinfo/aws/hko_mica/cp1/latest_CP1.jpg?v=%lu123", // Central Pier
+    "https://www.hko.gov.hk/wxinfo/aws/hko_mica/hmm/latest_HMM.jpg?v=%lu123", // Hong Kong Maritime Museum
+    "https://www.hko.gov.hk/wxinfo/aws/hko_mica/ic1/latest_IC1.jpg?v=%lu123"  // International Commerce Centre
+};
+
+const char *CURRENT_WEATHER_URL = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=en";
+const char *WEATHER_WARNSUM_URL = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=en";
+
 void getWeather(HTTPClient *http, size_t len)
 {
   String payload = http->getString();
@@ -126,5 +135,153 @@ void getWeather(HTTPClient *http, size_t len)
   case 93:
     lv_img_set_src(ui_Icon1, &ui_img_pic93_png);
     break;
+  }
+}
+
+void getWarning(HTTPClient *http, size_t len)
+{
+  String payload = http->getString();
+
+  JSONVar myObject = JSON.parse(payload);
+
+  if (myObject.hasOwnProperty("WFIRE"))
+  {
+    String code = myObject["WFIRE"]["code"];
+    String actionCode = myObject["WFIRE"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      if (code.equals("WFIREY"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_firey_png);
+      }
+      else if (code.equals("WFIRER"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_firer_png);
+      }
+    }
+  }
+  if (myObject.hasOwnProperty("WFROST"))
+  {
+    String actionCode = myObject["WFROST"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      lv_img_set_src(ui_Icon2, &ui_img_frost_png);
+    }
+  }
+  if (myObject.hasOwnProperty("WHOT"))
+  {
+    String actionCode = myObject["WHOT"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      lv_img_set_src(ui_Icon2, &ui_img_vhot_png);
+    }
+  }
+  if (myObject.hasOwnProperty("WCOLD"))
+  {
+    String actionCode = myObject["WCOLD"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      lv_img_set_src(ui_Icon2, &ui_img_cold_png);
+    }
+  }
+  if (myObject.hasOwnProperty("WMSGNL"))
+  {
+    String actionCode = myObject["WMSGNL"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      lv_img_set_src(ui_Icon2, &ui_img_sms_png);
+    }
+  }
+  if (myObject.hasOwnProperty("WRAIN"))
+  {
+    String code = myObject["WRAIN"]["code"];
+    String actionCode = myObject["WRAIN"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      if (code.equals("WRAINA"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_raina_png);
+      }
+      else if (code.equals("WRAINR"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_rainr_png);
+      }
+      else if (code.equals("WRAINB"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_rainb_png);
+      }
+    }
+  }
+  if (myObject.hasOwnProperty("WFNTSA"))
+  {
+    String actionCode = myObject["WFNTSA"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      lv_img_set_src(ui_Icon2, &ui_img_ntfl_png);
+    }
+  }
+  if (myObject.hasOwnProperty("WL"))
+  {
+    String actionCode = myObject["WL"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      lv_img_set_src(ui_Icon2, &ui_img_landslip_png);
+    }
+  }
+  if (myObject.hasOwnProperty("WTCSGNL"))
+  {
+    String code = myObject["WTCSGNL"]["code"];
+    String actionCode = myObject["WTCSGNL"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      if (code.equals("TC1"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_tc1_png);
+      }
+      else if (code.equals("TC3"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_tc3_png);
+      }
+      else if (code.equals("TC8NE"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_tc8ne_png);
+      }
+      else if (code.equals("TC8SE"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_tc8b_png);
+      }
+      else if (code.equals("TC8NW"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_tc8d_png);
+      }
+      else if (code.equals("TC8SW"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_tc8c_png);
+      }
+      else if (code.equals("TC9"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_tc9_png);
+      }
+      else if (code.equals("TC10"))
+      {
+        lv_img_set_src(ui_Icon2, &ui_img_tc10_png);
+      }
+    }
+  }
+  if (myObject.hasOwnProperty("WTMW"))
+  {
+    String actionCode = myObject["WTMW"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      lv_img_set_src(ui_Icon2, &ui_img_tsunami_png);
+    }
+  }
+  if (myObject.hasOwnProperty("WTS"))
+  {
+    String actionCode = myObject["WTS"]["actionCode"];
+    if (!actionCode.equals("CANCEL"))
+    {
+      lv_img_set_src(ui_Icon2, &ui_img_ts_png);
+    }
   }
 }
