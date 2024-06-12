@@ -235,9 +235,9 @@ void setup()
 
     tabview = lv_tabview_create(ui_Screen1, LV_DIR_BOTTOM, 40);
     lv_obj_set_width(tabview, 280);
-    lv_obj_set_height(tabview, 198);
+    lv_obj_set_height(tabview, 202);
     lv_obj_set_x(tabview, 0);
-    lv_obj_set_y(tabview, 42);
+    lv_obj_set_y(tabview, 38);
     lv_obj_move_background(tabview);
     lv_obj_set_style_text_font(tabview, &ui_font_Font2, LV_PART_MAIN | LV_STATE_DEFAULT);
 

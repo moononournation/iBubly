@@ -41,9 +41,9 @@ void getWeather(HTTPClient *http, size_t len)
   Serial.print(": myObject[\"humidity\"][\"data\"][0][\"value\"] = ");
   Serial.println(humidity);
 
-  sprintf(textBuf, "%d℃  %d%%", temperature, humidity);
+  sprintf(textBuf, "%d℃ %d%%", temperature, humidity);
   lv_label_set_text(ui_Label1, textBuf);
-  sprintf(textBuf, "雨: %d UV: %.1f", rainfall, uvindex);
+  sprintf(textBuf, "降雨: %d mm\nUV: %.1f", rainfall, uvindex);
   lv_label_set_text(ui_Label2, textBuf);
 
   switch (icon)
@@ -150,8 +150,11 @@ void getWarning(HTTPClient *http, size_t len)
       ui_Icon3,
       ui_Icon4,
       ui_Icon5,
-      ui_Icon6};
-  int warn_icon_count = 5;
+      ui_Icon6,
+      ui_Icon7,
+      ui_Icon8,
+      ui_Icon9};
+  int warn_icon_count = 8;
 
   if (myObject.hasOwnProperty("WFIRE"))
   {

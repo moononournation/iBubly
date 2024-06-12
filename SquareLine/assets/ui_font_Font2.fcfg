@@ -10,7 +10,7 @@
   "ranges": [
     "0x20-0x7f"
   ],
-  "symbols": "雨中環碼頭海事博物館環球貿易",
+  "symbols": "降雨中環碼頭海事博物館環球貿易",
   "customparams": "--no-compress --no-prefilter",
   "uploaded": false
 }

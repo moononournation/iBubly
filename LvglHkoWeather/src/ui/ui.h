@@ -33,6 +33,9 @@ extern lv_obj_t *ui_Icon3;
 extern lv_obj_t *ui_Icon4;
 extern lv_obj_t *ui_Icon5;
 extern lv_obj_t *ui_Icon6;
+extern lv_obj_t *ui_Icon7;
+extern lv_obj_t *ui_Icon8;
+extern lv_obj_t *ui_Icon9;
 extern lv_obj_t *ui____initial_actions0;
 
 

@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Size: 16 px
  * Bpp: 2
- * Opts: --bpp 2 --size 16 --font /git/iBubly/SquareLine/assets/NotoSansCJKhk-Medium.otf -o /git/iBubly/SquareLine/assets/ui_font_Font2.c --format lvgl -r 0x20-0x7f --symbols 雨中環碼頭海事博物館環球貿易 --no-compress --no-prefilter
+ * Opts: --bpp 2 --size 16 --font /Users/Shared/git/iBubly/SquareLine/assets/NotoSansCJKhk-Medium.otf -o /Users/Shared/git/iBubly/SquareLine/assets/ui_font_Font2.c --format lvgl -r 0x20-0x7f --symbols 降雨中環碼頭海事博物館環球貿易 --no-compress --no-prefilter
  ******************************************************************************/
 
 #include "ui.h"
@@ -626,6 +626,16 @@ static LV_ATTRIBUTE_LARGE_CONST const uint8_t glyph_bitmap[] = {
     0x3, 0xff, 0xff, 0xd0, 0x0, 0xb4, 0xe, 0x40,
     0x2f, 0x90, 0x2, 0xf8, 0x4, 0x0, 0x0, 0x10,
 
+    /* U+964D "降" */
+    0x0, 0x0, 0x50, 0x3, 0xff, 0x7, 0x80, 0xe,
+    0x7c, 0x7f, 0xfd, 0x34, 0xd7, 0xe0, 0xf0, 0xd7,
+    0x28, 0xef, 0x3, 0x68, 0x7, 0xf9, 0xd, 0x73,
+    0xf8, 0x7f, 0x74, 0xe5, 0xb, 0x18, 0xd2, 0xc5,
+    0x6d, 0x53, 0x47, 0x7f, 0xff, 0xcd, 0xb8, 0xd2,
+    0xc0, 0x35, 0x87, 0x5b, 0x54, 0xd0, 0x2f, 0xff,
+    0xf7, 0x40, 0x0, 0xb0, 0xd, 0x0, 0x2, 0xc0,
+    0x0,
+
     /* U+96E8 "雨" */
     0x3f, 0xff, 0xff, 0xfc, 0x15, 0x57, 0xd5, 0x54,
     0x0, 0x2, 0xc0, 0x0, 0x0, 0x3, 0xc0, 0x0,
@@ -768,9 +778,10 @@ static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc[] = {
     {.bitmap_index = 2643, .adv_w = 256, .box_w = 16, .box_h = 15, .ofs_x = 0, .ofs_y = -2},
     {.bitmap_index = 2703, .adv_w = 256, .box_w = 16, .box_h = 16, .ofs_x = 0, .ofs_y = -2},
     {.bitmap_index = 2767, .adv_w = 256, .box_w = 16, .box_h = 16, .ofs_x = 0, .ofs_y = -2},
-    {.bitmap_index = 2831, .adv_w = 256, .box_w = 16, .box_h = 14, .ofs_x = 0, .ofs_y = -1},
-    {.bitmap_index = 2887, .adv_w = 256, .box_w = 16, .box_h = 16, .ofs_x = 0, .ofs_y = -2},
-    {.bitmap_index = 2951, .adv_w = 256, .box_w = 16, .box_h = 16, .ofs_x = 0, .ofs_y = -2}
+    {.bitmap_index = 2831, .adv_w = 256, .box_w = 15, .box_h = 15, .ofs_x = 1, .ofs_y = -1},
+    {.bitmap_index = 2888, .adv_w = 256, .box_w = 16, .box_h = 14, .ofs_x = 0, .ofs_y = -1},
+    {.bitmap_index = 2944, .adv_w = 256, .box_w = 16, .box_h = 16, .ofs_x = 0, .ofs_y = -2},
+    {.bitmap_index = 3008, .adv_w = 256, .box_w = 16, .box_h = 16, .ofs_x = 0, .ofs_y = -2}
 };
 
 /*---------------------
@@ -779,7 +790,7 @@ static const lv_font_fmt_txt_glyph_dsc_t glyph_dsc[] = {
 
 static const uint16_t unicode_list_1[] = {
     0x0, 0x5e, 0x52d, 0x17e6, 0x1f4a, 0x243c, 0x25d6, 0x2683,
-    0x2a8f, 0x3e92, 0x48bb, 0x4a00, 0x4afb
+    0x2a8f, 0x3e92, 0x4820, 0x48bb, 0x4a00, 0x4afb
 };
 
 /*Collect the unicode lists and glyph_id offsets*/
@@ -791,7 +802,7 @@ static const lv_font_fmt_txt_cmap_t cmaps[] =
     },
     {
         .range_start = 20013, .range_length = 19196, .glyph_id_start = 96,
-        .unicode_list = unicode_list_1, .glyph_id_ofs_list = NULL, .list_length = 13, .type = LV_FONT_FMT_TXT_CMAP_SPARSE_TINY
+        .unicode_list = unicode_list_1, .glyph_id_ofs_list = NULL, .list_length = 14, .type = LV_FONT_FMT_TXT_CMAP_SPARSE_TINY
     }
 };
 
@@ -816,7 +827,7 @@ static const uint8_t kern_left_class_mapping[] =
     29, 29, 37, 38, 39, 40, 37, 41,
     42, 43, 44, 45, 2, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0
+    0, 0, 0, 0, 0, 0
 };
 
 /*Map glyph_ids to kern right classes*/
@@ -835,7 +846,7 @@ static const uint8_t kern_right_class_mapping[] =
     25, 30, 25, 30, 31, 32, 33, 34,
     35, 36, 37, 38, 0, 0, 3, 0,
     0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0
+    0, 0, 0, 0, 0, 0
 };
 
 /*Kern values between classes*/
