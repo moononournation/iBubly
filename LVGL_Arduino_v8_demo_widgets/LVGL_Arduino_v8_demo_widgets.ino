@@ -121,15 +121,16 @@ void setup()
 #endif
 
   // Init Display
-  if (!gfx->begin())
+  if (!gfx->begin(80000000))
   {
     Serial.println("gfx->begin() failed!");
   }
   gfx->fillScreen(BLACK);
 
 #ifdef GFX_BL
-  pinMode(GFX_BL, OUTPUT);
-  digitalWrite(GFX_BL, HIGH);
+  ledcAttachPin(GFX_BL, 1); // assign RGB led pins to channels
+  ledcSetup(1, 12000, 8); // 12 kHz PWM, 8-bit resolution
+  ledcWrite(1, 63);
 #endif
 
   // Init touch device

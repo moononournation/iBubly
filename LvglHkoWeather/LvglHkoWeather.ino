@@ -137,7 +137,7 @@ void setup()
 #endif
 
   // Init Display
-  if (!gfx->begin())
+  if (!gfx->begin(80000000))
   {
     Serial.println("gfx->begin() failed!");
   }
