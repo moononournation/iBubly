@@ -233,7 +233,7 @@ void setup()
     /* Init SquareLine prepared UI */
     ui_init();
 
-    tabview = lv_tabview_create(ui_Screen1, LV_DIR_BOTTOM, 40);
+    tabview = lv_tabview_create(ui_Screen1, LV_DIR_BOTTOM, 44);
     lv_obj_set_width(tabview, 280);
     lv_obj_set_height(tabview, 202);
     lv_obj_set_x(tabview, 0);

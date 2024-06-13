@@ -164,11 +164,13 @@ void getWarning(HTTPClient *http, size_t len)
     {
       if (code.equals("WFIREY"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_firey_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_firey_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
       else if (code.equals("WFIRER"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_firer_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_firer_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
     }
   }
@@ -177,7 +179,8 @@ void getWarning(HTTPClient *http, size_t len)
     String actionCode = myObject["WFROST"]["actionCode"];
     if (!actionCode.equals("CANCEL"))
     {
-      lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_frost_png);
+      lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_frost_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
     }
   }
   if (myObject.hasOwnProperty("WHOT"))
@@ -185,7 +188,8 @@ void getWarning(HTTPClient *http, size_t len)
     String actionCode = myObject["WHOT"]["actionCode"];
     if (!actionCode.equals("CANCEL"))
     {
-      lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_vhot_png);
+      lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_vhot_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
     }
   }
   if (myObject.hasOwnProperty("WCOLD"))
@@ -193,7 +197,8 @@ void getWarning(HTTPClient *http, size_t len)
     String actionCode = myObject["WCOLD"]["actionCode"];
     if (!actionCode.equals("CANCEL"))
     {
-      lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_cold_png);
+      lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_cold_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
     }
   }
   if (myObject.hasOwnProperty("WMSGNL"))
@@ -201,7 +206,8 @@ void getWarning(HTTPClient *http, size_t len)
     String actionCode = myObject["WMSGNL"]["actionCode"];
     if (!actionCode.equals("CANCEL"))
     {
-      lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_sms_png);
+      lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_sms_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
     }
   }
   if (myObject.hasOwnProperty("WRAIN"))
@@ -212,15 +218,18 @@ void getWarning(HTTPClient *http, size_t len)
     {
       if (code.equals("WRAINA"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_raina_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_raina_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
       else if (code.equals("WRAINR"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_rainr_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_rainr_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
       else if (code.equals("WRAINB"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_rainb_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_rainb_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
     }
   }
@@ -229,7 +238,8 @@ void getWarning(HTTPClient *http, size_t len)
     String actionCode = myObject["WFNTSA"]["actionCode"];
     if (!actionCode.equals("CANCEL"))
     {
-      lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_ntfl_png);
+      lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_ntfl_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
     }
   }
   if (myObject.hasOwnProperty("WL"))
@@ -237,7 +247,8 @@ void getWarning(HTTPClient *http, size_t len)
     String actionCode = myObject["WL"]["actionCode"];
     if (!actionCode.equals("CANCEL"))
     {
-      lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_landslip_png);
+      lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_landslip_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
     }
   }
   if (myObject.hasOwnProperty("WTCSGNL"))
@@ -248,35 +259,43 @@ void getWarning(HTTPClient *http, size_t len)
     {
       if (code.equals("TC1"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_tc1_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_tc1_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
       else if (code.equals("TC3"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_tc3_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_tc3_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
       else if (code.equals("TC8NE"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_tc8ne_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_tc8ne_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
       else if (code.equals("TC8SE"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_tc8b_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_tc8b_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
       else if (code.equals("TC8NW"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_tc8d_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_tc8d_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
       else if (code.equals("TC8SW"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_tc8c_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_tc8c_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
       else if (code.equals("TC9"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_tc9_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_tc9_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
       else if (code.equals("TC10"))
       {
-        lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_tc10_png);
+        lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_tc10_png);
+        lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
       }
     }
   }
@@ -285,7 +304,8 @@ void getWarning(HTTPClient *http, size_t len)
     String actionCode = myObject["WTMW"]["actionCode"];
     if (!actionCode.equals("CANCEL"))
     {
-      lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_tsunami_png);
+      lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_tsunami_png);
+      lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
     }
   }
   if (myObject.hasOwnProperty("WTS"))
@@ -293,13 +313,14 @@ void getWarning(HTTPClient *http, size_t len)
     String actionCode = myObject["WTS"]["actionCode"];
     if (!actionCode.equals("CANCEL"))
     {
-      lv_img_set_src(warn_icons[cur_warn_icon_idx++], &ui_img_ts_png);
+      lv_img_set_src(warn_icons[cur_warn_icon_idx], &ui_img_ts_png);
+      lv_obj_clear_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
     }
   }
 
   // clear remain icons
   for (; cur_warn_icon_idx < warn_icon_count;)
   {
-    lv_img_set_src(warn_icons[cur_warn_icon_idx++], NULL);
+    lv_obj_add_flag(warn_icons[cur_warn_icon_idx++], LV_OBJ_FLAG_HIDDEN);
   }
 }
