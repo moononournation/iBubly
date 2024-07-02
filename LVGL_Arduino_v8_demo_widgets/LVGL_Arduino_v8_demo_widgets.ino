@@ -9,7 +9,7 @@
  as the examples and demos are now part of the main LVGL library. */
 
 // #include <examples/lv_examples.h>
- #include <demos/lv_demos.h>
+#include <demos/lv_demos.h>
 
 // #define DIRECT_MODE // Uncomment to enable full frame buffer
 
@@ -128,8 +128,8 @@ void setup()
   gfx->fillScreen(BLACK);
 
 #ifdef GFX_BL
+  ledcSetup(1, 12000, 8);   // 12 kHz PWM, 8-bit resolution
   ledcAttachPin(GFX_BL, 1); // assign RGB led pins to channels
-  ledcSetup(1, 12000, 8); // 12 kHz PWM, 8-bit resolution
   ledcWrite(1, 63);
 #endif
 
@@ -194,9 +194,9 @@ void setup()
     lv_indev_drv_register(&indev_drv);
 
     /* Option 1: Create simple label */
-//    lv_obj_t *label = lv_label_create(lv_scr_act());
-//    lv_label_set_text(label, "Hello Arduino! (V" GFX_STR(LVGL_VERSION_MAJOR) "." GFX_STR(LVGL_VERSION_MINOR) "." GFX_STR(LVGL_VERSION_PATCH) ")");
-//    lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
+    // lv_obj_t *label = lv_label_create(lv_scr_act());
+    // lv_label_set_text(label, "Hello Arduino! (V" GFX_STR(LVGL_VERSION_MAJOR) "." GFX_STR(LVGL_VERSION_MINOR) "." GFX_STR(LVGL_VERSION_PATCH) ")");
+    // lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
 
     /* Option 2: Try an example. See all the examples
      * online: https://docs.lvgl.io/master/examples.html
@@ -204,7 +204,7 @@ void setup()
     // lv_example_btn_1();
 
     /* Option 3: Or try out a demo. Don't forget to enable the demos in lv_conf.h. E.g. LV_USE_DEMOS_WIDGETS*/
-     lv_demo_widgets();
+    lv_demo_widgets();
     // lv_demo_benchmark();
     // lv_demo_keypad_encoder();
     // lv_demo_music();

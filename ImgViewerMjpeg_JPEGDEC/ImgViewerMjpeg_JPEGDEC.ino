@@ -76,8 +76,8 @@ void setup()
   gfx->fillScreen(BLACK);
 
 #ifdef GFX_BL
+  ledcSetup(1, 12000, 8);   // 12 kHz PWM, 8-bit resolution
   ledcAttachPin(GFX_BL, 1); // assign RGB led pins to channels
-  ledcSetup(1, 12000, 8); // 12 kHz PWM, 8-bit resolution
   ledcWrite(1, 63);
 #endif
 

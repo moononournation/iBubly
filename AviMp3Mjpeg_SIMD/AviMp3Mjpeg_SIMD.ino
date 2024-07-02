@@ -7,7 +7,7 @@
  */
 
 const char *root = "/root";
-//const char *avi_file = "/root/AviMp3Mjpeg240p30fps.avi";
+// const char *avi_file = "/root/AviMp3Mjpeg240p30fps.avi";
 const char *avi_file = "/root/splash.avi";
 
 #include <WiFi.h>
@@ -64,7 +64,7 @@ static unsigned long total_show_video_ms = 0;
 #define SD_SCK 4
 #define SD_MISO 5 // D0
 #define SD_MOSI 3 // CMD
-#define SD_CS 2 // D3
+#define SD_CS 2   // D3
 #define SD_D1 6
 #define SD_D2 1
 // I2S
@@ -93,8 +93,8 @@ void setup()
   gfx->fillScreen(BLACK);
 
 #ifdef GFX_BL
+  ledcSetup(1, 12000, 8);   // 12 kHz PWM, 8-bit resolution
   ledcAttachPin(GFX_BL, 1); // assign RGB led pins to channels
-  ledcSetup(1, 12000, 8); // 12 kHz PWM, 8-bit resolution
   ledcWrite(1, 63);
 #endif
 
@@ -287,81 +287,81 @@ void loop()
       Serial.printf("Decode video: %lu ms (%0.1f %%)\n", total_decode_video_ms, 100.0 * total_decode_video_ms / time_used);
       Serial.printf("Show video: %lu ms (%0.1f %%)\n", total_show_video_ms, 100.0 * total_show_video_ms / time_used);
 
-//#define CHART_MARGIN 32
-//#define LEGEND_A_COLOR 0x1BB6
-//#define LEGEND_B_COLOR 0xFBE1
-//#define LEGEND_C_COLOR 0x2D05
-//#define LEGEND_D_COLOR 0xD125
-//#define LEGEND_E_COLOR 0x9337
-//#define LEGEND_F_COLOR 0x8AA9
-//#define LEGEND_G_COLOR 0xE3B8
-//#define LEGEND_H_COLOR 0x7BEF
-//#define LEGEND_I_COLOR 0xBDE4
-//#define LEGEND_J_COLOR 0x15F9
-//      // gfx->setCursor(0, 0);
-//      gfx->setTextColor(WHITE);
-//      gfx->printf("Played frames: %d\n", played_frames);
-//      gfx->printf("Skipped frames: %ld (%0.1f %%)\n", skipped_frames, 100.0 * skipped_frames / total_frames);
-//      gfx->printf("Time used: %d ms\n", time_used);
-//      gfx->printf("Expected FPS: %0.1f\n", fr);
-//      gfx->printf("Actual FPS: %0.1f\n\n", fps);
-//
-//      int16_t r1 = ((gfx->height() - CHART_MARGIN - CHART_MARGIN) / 2);
-//      int16_t r2 = r1 / 2;
-//      int16_t cx = gfx->width() - r1 - CHART_MARGIN;
-//      int16_t cy = r1 + CHART_MARGIN;
-//
-//      float arc_start1 = 0;
-//      float arc_end1 = arc_start1 + max(2.0, 360.0 * total_read_audio_ms / time_used);
-//      for (int i = arc_start1 + 1; i < arc_end1; i += 2)
-//      {
-//        gfx->fillArc(cx, cy, r1, r2, arc_start1 - 90.0, i - 90.0, LEGEND_A_COLOR);
-//      }
-//      gfx->fillArc(cx, cy, r1, r2, arc_start1 - 90.0, arc_end1 - 90.0, LEGEND_A_COLOR);
-//      gfx->setTextColor(LEGEND_A_COLOR);
-//      gfx->printf("Read audio: %lu ms (%0.1f %%)\n", total_read_audio_ms, 100.0 * total_read_audio_ms / time_used);
-//
-//      float arc_start2 = arc_end1;
-//      float arc_end2 = arc_start2 + max(2.0, 360.0 * total_read_video_ms / time_used);
-//      for (int i = arc_start2 + 1; i < arc_end2; i += 2)
-//      {
-//        gfx->fillArc(cx, cy, r1, r2, arc_start2 - 90.0, i - 90.0, LEGEND_B_COLOR);
-//      }
-//      gfx->fillArc(cx, cy, r1, r2, arc_start2 - 90.0, arc_end2 - 90.0, LEGEND_B_COLOR);
-//      gfx->setTextColor(LEGEND_B_COLOR);
-//      gfx->printf("Read video: %lu ms (%0.1f %%)\n", total_read_video_ms, 100.0 * total_read_video_ms / time_used);
-//
-//      float arc_start3 = arc_end2;
-//      float arc_end3 = arc_start3 + max(2.0, 360.0 * total_decode_video_ms / time_used);
-//      for (int i = arc_start3 + 1; i < arc_end3; i += 2)
-//      {
-//        gfx->fillArc(cx, cy, r1, r2, arc_start3 - 90.0, i - 90.0, LEGEND_C_COLOR);
-//      }
-//      gfx->fillArc(cx, cy, r1, r2, arc_start3 - 90.0, arc_end3 - 90.0, LEGEND_C_COLOR);
-//      gfx->setTextColor(LEGEND_C_COLOR);
-//      gfx->printf("Decode video: %lu ms (%0.1f %%)\n", total_decode_video_ms, 100.0 * total_decode_video_ms / time_used);
-//
-//      float arc_start4 = arc_end3;
-//      float arc_end4 = arc_start4 + max(2.0, 360.0 * total_show_video_ms / time_used);
-//      for (int i = arc_start4 + 1; i < arc_end4; i += 2)
-//      {
-//        gfx->fillArc(cx, cy, r1, r2, arc_start4 - 90.0, i - 90.0, LEGEND_D_COLOR);
-//      }
-//      gfx->fillArc(cx, cy, r1, r2, arc_start4 - 90.0, arc_end4 - 90.0, LEGEND_D_COLOR);
-//      gfx->setTextColor(LEGEND_D_COLOR);
-//      gfx->printf("Show video: %lu ms (%0.1f %%)\n", total_show_video_ms, 100.0 * total_show_video_ms / time_used);
-//
-//      float arc_start5 = 0;
-//      float arc_end5 = arc_start5 + max(2.0, 360.0 * total_decode_audio_ms / time_used);
-//      for (int i = arc_start5 + 1; i < arc_end5; i += 2)
-//      {
-//        gfx->fillArc(cx, cy, r2, 0, arc_start5 - 90.0, i - 90.0, LEGEND_E_COLOR);
-//      }
-//      gfx->fillArc(cx, cy, r2, 0, arc_start5 - 90.0, arc_end5 - 90.0, LEGEND_E_COLOR);
-//      gfx->setTextColor(LEGEND_E_COLOR);
-//      gfx->printf("Decode audio: %lu ms (%0.1f %%)\n", total_decode_audio_ms, 100.0 * total_decode_audio_ms / time_used);
-//      gfx->setTextColor(LEGEND_G_COLOR);
-//      gfx->printf("Play audio: %lu ms (%0.1f %%)\n", total_play_audio_ms, 100.0 * total_play_audio_ms / time_used);
+// #define CHART_MARGIN 32
+// #define LEGEND_A_COLOR 0x1BB6
+// #define LEGEND_B_COLOR 0xFBE1
+// #define LEGEND_C_COLOR 0x2D05
+// #define LEGEND_D_COLOR 0xD125
+// #define LEGEND_E_COLOR 0x9337
+// #define LEGEND_F_COLOR 0x8AA9
+// #define LEGEND_G_COLOR 0xE3B8
+// #define LEGEND_H_COLOR 0x7BEF
+// #define LEGEND_I_COLOR 0xBDE4
+// #define LEGEND_J_COLOR 0x15F9
+//       // gfx->setCursor(0, 0);
+//       gfx->setTextColor(WHITE);
+//       gfx->printf("Played frames: %d\n", played_frames);
+//       gfx->printf("Skipped frames: %ld (%0.1f %%)\n", skipped_frames, 100.0 * skipped_frames / total_frames);
+//       gfx->printf("Time used: %d ms\n", time_used);
+//       gfx->printf("Expected FPS: %0.1f\n", fr);
+//       gfx->printf("Actual FPS: %0.1f\n\n", fps);
+
+//       int16_t r1 = ((gfx->height() - CHART_MARGIN - CHART_MARGIN) / 2);
+//       int16_t r2 = r1 / 2;
+//       int16_t cx = gfx->width() - r1 - CHART_MARGIN;
+//       int16_t cy = r1 + CHART_MARGIN;
+
+//       float arc_start1 = 0;
+//       float arc_end1 = arc_start1 + max(2.0, 360.0 * total_read_audio_ms / time_used);
+//       for (int i = arc_start1 + 1; i < arc_end1; i += 2)
+//       {
+//         gfx->fillArc(cx, cy, r1, r2, arc_start1 - 90.0, i - 90.0, LEGEND_A_COLOR);
+//       }
+//       gfx->fillArc(cx, cy, r1, r2, arc_start1 - 90.0, arc_end1 - 90.0, LEGEND_A_COLOR);
+//       gfx->setTextColor(LEGEND_A_COLOR);
+//       gfx->printf("Read audio: %lu ms (%0.1f %%)\n", total_read_audio_ms, 100.0 * total_read_audio_ms / time_used);
+
+//       float arc_start2 = arc_end1;
+//       float arc_end2 = arc_start2 + max(2.0, 360.0 * total_read_video_ms / time_used);
+//       for (int i = arc_start2 + 1; i < arc_end2; i += 2)
+//       {
+//         gfx->fillArc(cx, cy, r1, r2, arc_start2 - 90.0, i - 90.0, LEGEND_B_COLOR);
+//       }
+//       gfx->fillArc(cx, cy, r1, r2, arc_start2 - 90.0, arc_end2 - 90.0, LEGEND_B_COLOR);
+//       gfx->setTextColor(LEGEND_B_COLOR);
+//       gfx->printf("Read video: %lu ms (%0.1f %%)\n", total_read_video_ms, 100.0 * total_read_video_ms / time_used);
+
+//       float arc_start3 = arc_end2;
+//       float arc_end3 = arc_start3 + max(2.0, 360.0 * total_decode_video_ms / time_used);
+//       for (int i = arc_start3 + 1; i < arc_end3; i += 2)
+//       {
+//         gfx->fillArc(cx, cy, r1, r2, arc_start3 - 90.0, i - 90.0, LEGEND_C_COLOR);
+//       }
+//       gfx->fillArc(cx, cy, r1, r2, arc_start3 - 90.0, arc_end3 - 90.0, LEGEND_C_COLOR);
+//       gfx->setTextColor(LEGEND_C_COLOR);
+//       gfx->printf("Decode video: %lu ms (%0.1f %%)\n", total_decode_video_ms, 100.0 * total_decode_video_ms / time_used);
+
+//       float arc_start4 = arc_end3;
+//       float arc_end4 = arc_start4 + max(2.0, 360.0 * total_show_video_ms / time_used);
+//       for (int i = arc_start4 + 1; i < arc_end4; i += 2)
+//       {
+//         gfx->fillArc(cx, cy, r1, r2, arc_start4 - 90.0, i - 90.0, LEGEND_D_COLOR);
+//       }
+//       gfx->fillArc(cx, cy, r1, r2, arc_start4 - 90.0, arc_end4 - 90.0, LEGEND_D_COLOR);
+//       gfx->setTextColor(LEGEND_D_COLOR);
+//       gfx->printf("Show video: %lu ms (%0.1f %%)\n", total_show_video_ms, 100.0 * total_show_video_ms / time_used);
+
+//       float arc_start5 = 0;
+//       float arc_end5 = arc_start5 + max(2.0, 360.0 * total_decode_audio_ms / time_used);
+//       for (int i = arc_start5 + 1; i < arc_end5; i += 2)
+//       {
+//         gfx->fillArc(cx, cy, r2, 0, arc_start5 - 90.0, i - 90.0, LEGEND_E_COLOR);
+//       }
+//       gfx->fillArc(cx, cy, r2, 0, arc_start5 - 90.0, arc_end5 - 90.0, LEGEND_E_COLOR);
+//       gfx->setTextColor(LEGEND_E_COLOR);
+//       gfx->printf("Decode audio: %lu ms (%0.1f %%)\n", total_decode_audio_ms, 100.0 * total_decode_audio_ms / time_used);
+//       gfx->setTextColor(LEGEND_G_COLOR);
+//       gfx->printf("Play audio: %lu ms (%0.1f %%)\n", total_play_audio_ms, 100.0 * total_play_audio_ms / time_used);
     }
   }
   else
